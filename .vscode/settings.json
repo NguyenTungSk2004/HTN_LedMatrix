@@ -38,8 +38,8 @@
   "C_Cpp_Runner.compilerArgs": [],
   "C_Cpp_Runner.linkerArgs": [],
   "C_Cpp_Runner.includePaths": [
-    "C:/Users/nguye/OneDrive/Documents/PlatformIO/Projects/ledMatrix/include",
-    "C:/Users/nguye/OneDrive/Documents/PlatformIO/Projects/ledMatrix/src",
+    "C:/Users/nguye/OneDrive/Documents/PlatformIO/Projects/LedMatrix/include",
+    "C:/Users/nguye/OneDrive/Documents/PlatformIO/Projects/LedMatrix/src",
     "C:/Users/nguye/.platformio/packages/framework-arduino-avr/cores/arduino",
     "C:/Users/nguye/.platformio/packages/framework-arduino-avr/variants/standard",
     "C:/Users/nguye/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
@@ -66,6 +66,5 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false,
-  "C_Cpp.errorSquiggles": "disabled"
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }
