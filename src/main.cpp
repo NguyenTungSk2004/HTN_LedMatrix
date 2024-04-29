@@ -14,14 +14,15 @@ void setup() {
 }
 
 void loop() {
-  nhietdo.ReadTemperature();
-  doam.ReadTemperature();
-  
-  // ShowScreen("Nhiet do");
-  ShowScreen(nhietdo.data());
-  // ShowScreen(" ");
-  //ShowScreen("Do am ")
-  ShowScreen(doam.data());
+  // nhietdo.ReadTemperature();
+  // nhietdo.ReadTemperatureInternet();
+  // doam.ReadHumidity();
+  // ToData("12") --> chuyển đổi hexa 
+  // ShowScreen();
+  if(button == 1)
+      ShowScreenRightToLeft(nhietdo.data());
+  else
+      ShowScreenLeftToRight(doam.data());
 }
 
 

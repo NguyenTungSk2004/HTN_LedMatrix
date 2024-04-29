@@ -1,12 +1,12 @@
-#ifndef functions_h
-#define functions_h
+#ifndef DataProcess_h
+#define DataProcess_h
 
 #include <vector>
 #include <data.h>
 
 using namespace std;
 
-//Hàm truyền bit
+//Hàm truyền bit vào ic 74hc595 - LSB
 void truyenbit(int DS , int SH_CP , int number){
     digitalWrite(ST_CP,LOW);
     shiftOut(DS , SH_CP , LSBFIRST , number); 
@@ -44,15 +44,11 @@ vector<vector<byte>> renderArraysBit(int data) {
 
 
 /*
-    Các hàm hiển thị 
+    Xử lí dữ liệu internet
 */
-void ShowScreenRightToLeft(vector<vector<byte>> cambien){
+void InternetConnection(){
 
 }
-void ShowScreenLeftToRight(vector<vector<byte>> cambien){
 
-}
-void ShowScreen(vector<vector<byte>> cambien){
 
-}
 #endif
