@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 #include <DHT.h>
-#include <functions.h>
+#include <DataProcess.h>
 
 #define DHTPIN 0     // Chân kết nối với cảm biến DHT11
 #define DHTTYPE DHT11   // DHT 11

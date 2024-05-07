@@ -11,6 +11,9 @@
 
 #define ST_CP 11
 
+#define buttonManual 4
+#define buttonOnline 3
+
 
 byte E = 0b10000000; // Dữ liệu cực dương -> quét cột bằng: E >> i(1-8)
 byte chu[][8] = { 
@@ -56,4 +59,11 @@ byte chu[][8] = {
 
 // mảng chứa các characters thực có index tương ứng ở mảng byte bên trên
 int indexChu[] ={};
+
+
+// Biến của xử lí buttonManualClicked();
+volatile boolean pressed = false;
+volatile int ModeState = 0;
+unsigned long lastDebounceTime = millis();
+unsigned long debounceDelay = 20; 
 #endif
