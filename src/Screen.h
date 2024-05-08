@@ -14,6 +14,9 @@ void ShowScreen(String myString){
     for(int i = 0; i < myString.length(); i++) {
         int index = result[i];
         for (int j = 0; j < 8; j++) {
+            truyenbit(DS_A, SH_CP_A, xoaManHinh[j]);
+            truyenbit(DS_A, SH_CP_A, xoaManHinh[j]);
+            truyenbit(DS_A, SH_CP_A, xoaManHinh[j]);
             truyenbit(DS_A, SH_CP_A, chu[index][j]);
             truyenbit(DS_E, SH_CP_E, E >> j);
         }
