@@ -1,7 +1,6 @@
 #include <Arduino.h>
-#include <cambien.h>
-
-CamBien nhietdo, doam;
+#include <Screen.h>
+#include <DataProcess.h>
 
 void setup() {
   pinMode(ST_CP,OUTPUT);//RCLK
@@ -14,6 +13,11 @@ void setup() {
 
   pinMode(buttonManual,INPUT_PULLUP); //button manual with pull-up res in arduino
 }
+
+void loop() {
+  ShowScreen("B");
+}
+
 
 void buttonManualClicked() {
   //Xử lí nhiễu và click (nhấn rồi thả ra == 1 click)
@@ -47,11 +51,3 @@ void buttonManualClicked() {
       break;
   }
 }
-
-
-void loop() {
-  buttonManualClicked();
-}
-
-
-

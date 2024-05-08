@@ -1,8 +1,14 @@
 #ifndef DataProcess_h
 #define DataProcess_h
 
-#include <vector>
+#include <DHT.h>
+#include <string.h>
 #include <data.h>
+
+
+#define DHTPIN 0     // Chân kết nối với cảm biến DHT11
+#define DHTTYPE DHT11   // DHT 11
+DHT dht(DHTPIN, DHTTYPE);
 
 using namespace std;
 
@@ -13,31 +19,17 @@ void truyenbit(int DS , int SH_CP , int number){
     digitalWrite(ST_CP,HIGH);
 }
 
-// Trả về index trong mảng indexChu ở file data.h
-int GetIndex(int d){
+int GetIndex(char c){
+    for(size_t i = 0; i < strlen(characters); i++){
+        if(c == characters[i]) return i;
+    }
     return 0;
 }
 
-
-/*
-    Hàm thực hiện trả về một mảng các bit để hiển thị 
-    ví dụ: 
-        array = {
-            {0xFF,0xC1,0x80,0xB6,0xB6,0x90,0xD9,0xFF},
-            {0xFF,0x9F,0x9F,0xB8,0xA0,0x87,0x9F,0xFF},
-            {0xFF,0xC9,0x80,0xB6,0xB6,0x80,0xC9,0xFF}
-        };
-*/
-vector<vector<byte>> renderArraysBit(int data) {
-    vector<vector<byte>> arrays;
-    while(data !=0){
-        int d = data%10;
-        int index = GetIndex(d);
-
-        vector<byte> z = chu[index];
-        arrays.push_back(z);
-        
-        data = data/10;
+int* renderIndex_chu(String data) {
+    int *arrays = new int[data.length()]; // Dynamically allocate an array
+    for(size_t i = 0; i < data.length(); i++) {
+        arrays[i] = GetIndex(data[i]);
     }
     return arrays;
 }
@@ -49,6 +41,21 @@ vector<vector<byte>> renderArraysBit(int data) {
 void InternetConnection(){
 
 }
-
+// Phương thức đọc dữ liệu độ ẩm
+int ReadHumidity(){
+    float humidity = dht.readHumidity();
+    if(!isnan(humidity)){
+        return (int)humidity;
+    }
+    return 0;
+}
+//Phương thức đọc dữ liệu nhiệt độ
+int ReadTemperature(){
+    float temperature = dht.readTemperature();
+    if(!isnan(temperature)){
+        return (int)temperature;
+    } 
+    return 0;
+}
 
 #endif

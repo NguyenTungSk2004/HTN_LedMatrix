@@ -15,8 +15,8 @@
 #define buttonOnline 3
 
 
-byte E = 0b10000000; // Dữ liệu cực dương -> quét cột bằng: E >> i(1-8)
-byte chu[][8] = { 
+int E = 0b10000000; // Dữ liệu cực dương -> quét cột bằng: E >> i(1-8)
+int chu[][8] = { 
   {0xFF,0xC0,0x80,0xB7,0xB7,0x80,0xC0,0xFF}, //A
   {0xFF,0x80,0x80,0xB6,0xB6,0x80,0xC9,0xFF}, //B
   {0xFF,0xC1,0x80,0xBE,0xBE,0x9C,0xDD,0xFF}, //C
@@ -58,7 +58,7 @@ byte chu[][8] = {
 };
 
 // mảng chứa các characters thực có index tương ứng ở mảng byte bên trên
-int indexChu[] ={};
+char characters[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ' '};
 
 
 // Biến của xử lí buttonManualClicked();
