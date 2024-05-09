@@ -36,11 +36,14 @@ int* renderIndex_chu(String data) {
 
 
 /*
-    Xử lí dữ liệu internet
+    Module internet
 */
 void InternetConnection(){
-
+    // file esp32-ntp-clock-main.zip chưa được update
 }
+/*
+    Module cảm biến
+*/
 // Phương thức đọc dữ liệu độ ẩm
 int ReadHumidity(){
     float humidity = dht.readHumidity();

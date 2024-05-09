@@ -15,7 +15,7 @@ void setup() {
 }
 
 void loop() {
-  ShowScreen("A ");
+  ShowScreen("A");
 }
 
 
