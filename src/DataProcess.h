@@ -34,13 +34,6 @@ int* renderIndex_chu(String data) {
     return arrays;
 }
 
-
-/*
-    Module internet
-*/
-void InternetConnection(){
-    // file esp32-ntp-clock-main.zip chưa được update
-}
 /*
     Module cảm biến
 */

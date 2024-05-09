@@ -17,18 +17,8 @@ void ShowScreen(String myString){
             truyenbit(DS_A, SH_CP_A, chu[index][j]);
             truyenbit(DS_E, SH_CP_E, E >> j);
         }
-        delay(2);
-
     }
-
     delete[] result;
-}
-
-void ShowScreenRightToLeft(String myString){
-
-}
-void ShowScreenLeftToRight(String myString){
-
 }
 
 #endif
