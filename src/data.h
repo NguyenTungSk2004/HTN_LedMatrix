@@ -3,11 +3,11 @@
 
 #include "Arduino.h"
 
-#define DS_A 12
-#define SH_CP_A 13
+#define SH_CP_Hang 13
+#define DS_Hang 12
 
-#define DS_E 9
-#define SH_CP_E 10
+#define SH_CP_Cot 10
+#define DS_Cot 9
 
 #define ST_CP 11
 
@@ -15,7 +15,7 @@
 #define buttonOnline 3
 
 
-int E = 0b10000000; // Dữ liệu cực dương -> quét cột bằng: E >> i(1-8) LSB
+int cot = 0b10000000; // Dữ liệu cực dương -> quét cột bằng: E >> i(1-8) LSB
 int xoaManHinh[8]= {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
 int chu[][8] = { 
   {0xFF,0xC0,0x80,0xB7,0xB7,0x80,0xC0,0xFF}, //A
