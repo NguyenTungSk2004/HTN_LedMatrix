@@ -6,8 +6,7 @@
 void scan() {
     for (byte i = 0; i < 8; i++) {
         digitalWrite(ST_CP, LOW); // turn off Latch -> start shifting bits into the IC
-        for (int l = 0; l < ledCount; l++) 
-                shiftOut(DS_hang, SH_CP_hang, LSBFIRST, led[l][i]); // shift bits into the 74HC595 (row-wise)
+        for (int l = 0; l < ledCount; l++) shiftOut(DS_hang, SH_CP_hang, LSBFIRST, led[l][i]); // shift bits into the 74HC595 (row-wise)
         shiftOut(DS_cot, SH_CP_cot, MSBFIRST, cot[i]); // (column-wise) (MSBFIRST: read from right to left, LSBFIRST: read from left to right)
         digitalWrite(ST_CP, HIGH); // turn on Latch -> shift bits out to the screen
     }

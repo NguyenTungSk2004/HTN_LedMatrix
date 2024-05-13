@@ -3,15 +3,21 @@
 #include <DataProcess.h>
 #include <Screen.h>
 
+void buttonOnlineClicked(){
+  Serial.println("Online");
+}
+
 void buttonManualClicked() {
+  Serial.println("Manual");
   boardWipe();
   mode++;
 }
 
 void setup() {
+    Serial.begin(9600);
     dht.begin();
     pinMode(ST_CP, OUTPUT);  // RCLK
-
+    pinMode(7,OUTPUT); //
     pinMode(DS_hang, OUTPUT);     // SER row
     pinMode(SH_CP_hang, OUTPUT);  // SRCLK row
 
@@ -21,7 +27,8 @@ void setup() {
     pinMode(buttonManual, INPUT_PULLUP);
     pinMode(buttonOnline, INPUT_PULLUP);
 
-    attachInterrupt(buttonManual, buttonManualClicked, RISING);
+    attachInterrupt(0, buttonManualClicked, RISING);
+    attachInterrupt(1, buttonOnlineClicked, RISING);
 }
 void loop() {
   currentMode = mode;
@@ -30,16 +37,18 @@ void loop() {
    switch (mode) {
     case 0:
       //Hiển thị chế độ auto
-      hienthia(text,20,30);
-      hienthib(text,10,30);
+      hienthia(text,20,10);
+      boardWipe();
+      hienthib(text,20,10);
+      boardWipe();
       break;
     case 1:
       // Hiển thị kịch bản 1
-      hienthia(text,10,30);
+      hienthia(text,20,10);
       break;
     case 2:
       // Hiển thị kịch bản 2
-      hienthib(text,10,30);
+      hienthib(text,20,10);
       break;
     default:
       mode = 0;

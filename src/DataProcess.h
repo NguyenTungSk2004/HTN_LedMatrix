@@ -7,7 +7,7 @@
 #include <data.h>
 
 
-#define DHTPIN 2     // Chân kết nối với cảm biến DHT11
+#define DHTPIN 8     // Chân kết nối với cảm biến DHT11
 #define DHTTYPE DHT11   // DHT 11
 DHT dht(DHTPIN, DHTTYPE);
 
