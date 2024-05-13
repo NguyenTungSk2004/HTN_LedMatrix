@@ -15,7 +15,7 @@
 #define buttonOnline 3
 
 
-int E = 0b10000000; // Dữ liệu cực dương -> quét cột bằng: E >> i(1-8)
+int E = 0b10000000; // Dữ liệu cực dương -> quét cột bằng: E >> i(1-8) LSB
 int xoaManHinh[8]= {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
 int chu[][8] = { 
   {0xFF,0xC0,0x80,0xB7,0xB7,0x80,0xC0,0xFF}, //A

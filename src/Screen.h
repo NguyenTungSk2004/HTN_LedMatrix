@@ -10,7 +10,6 @@ void ShowScreen(String myString){
     int *result; 
     result = renderIndex_chu(myString); // trả ra một mảng index 
 
-    // Hiển thị dữ liệu đã chuyển đổi
     for(int i = 0; i < myString.length(); i++) {
         int index = result[i];  
         for (int j = 0; j < 8; j++) {
@@ -18,6 +17,7 @@ void ShowScreen(String myString){
             truyenbit(DS_E, SH_CP_E, E >> j);
         }
     }
+    
     delete[] result;
 }
 
