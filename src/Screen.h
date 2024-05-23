@@ -29,8 +29,6 @@ void boardWipe(){
 
 void hienthia(String tukhoa, uint8_t delay, uint8_t space) {
     if(currentMode != mode) return; // If mode has changed, return
-    Serial.println("--Anim A--");
-    Serial.println("Nhiet do: " + temp + "'C | Do am: " + humidity + "% | Do tre: " + delay + " | Cach doan: " + space);
     for (int q = 0; q < tukhoa.length(); q++) { // Iterate through each character in the string
         for (int e = 0; e < sizeof(character); e++) { // Check if the character exists in the character array
             if (tukhoa.charAt(q) == character[e]) {
@@ -78,8 +76,6 @@ void hienthia(String tukhoa, uint8_t delay, uint8_t space) {
 
 void hienthib(String tukhoa, uint8_t delay, uint8_t space) {
     if(currentMode != mode) return;
-    Serial.println("--Anim B--");
-    Serial.println("Nhiet do: " + temp + "'C | Do am: " + humidity + "% | Do tre: " + delay + " | Cach doan: " + space);
     for (int q = tukhoa.length() - 1; q >= 0; q--) {
         for (int e = 0; e < sizeof(character); e++) {
             if (tukhoa.charAt(q) == character[e]) {

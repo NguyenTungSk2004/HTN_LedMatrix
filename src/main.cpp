@@ -24,8 +24,8 @@ void setup() {
     pinMode(SH_CP_cot, OUTPUT);  // SRCLK column
     pinMode(DS_cot, OUTPUT);     // SER column
 
-    pinMode(buttonManual, INPUT_PULLUP);
-    pinMode(buttonOnline, INPUT_PULLUP);
+    pinMode(buttonManual, INPUT);
+    pinMode(buttonOnline, INPUT);
 
     attachInterrupt(0, buttonManualClicked, RISING);
     attachInterrupt(1, buttonOnlineClicked, RISING);
@@ -33,6 +33,7 @@ void setup() {
 void loop() {
   currentMode = mode;
   String text = "H:" + ReadHumidity() + "% T:" + ReadTemperature() + "c";
+  Serial.println(text);
   // các chế độ hiển thị
    switch (mode) {
     case 0:

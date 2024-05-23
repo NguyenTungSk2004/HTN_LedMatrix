@@ -3,8 +3,8 @@
 
 #include "Arduino.h"
 
-#define DS_cot 9 // DATA
-#define DS_hang 12
+#define DS_cot 9 // DATA Duong
+#define DS_hang 12 // DATA Am
 
 #define SH_CP_hang 13 // CLOCK 
 #define SH_CP_cot 10
